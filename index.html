@@ -22,6 +22,50 @@
       font-weight: 800;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
+    .roadmap {
+      background: #ffffff;
+      padding: 1.5rem;
+      max-width: 700px;
+      margin: 1.5rem auto;
+      border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .roadmap-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #4a8d8c;
+      text-align: center;
+    }
+    .step {
+      padding: 1rem;
+      border-right: 4px solid #4a8d8c;
+      margin-bottom: 1rem;
+      background: #f9f9f9;
+      border-radius: 8px;
+      position: relative;
+    }
+    .step::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      background: #4a8d8c;
+      border-radius: 50%;
+      position: absolute;
+      right: -10px;
+      top: 1.2rem;
+      border: 2px solid white;
+      box-shadow: 0 0 0 2px #4a8d8c;
+    }
+    .step-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .step-desc {
+      font-size: 0.95rem;
+      color: #555;
+    }
     main {
       padding: 1.5rem;
       max-width: 600px;
@@ -97,6 +141,35 @@
   <header>
     🗂️ حالة معاملة الداتافلو
   </header>
+
+  <section class="roadmap">
+    <div class="roadmap-title">خارطة الطريق من فلسطين إلى العيش في دبي 🇦🇪</div>
+    <div class="step">
+      <div class="step-title">1.✅تجهيز أوراق داتا فلو</div>
+      <div class="step-desc">جمع المستندات: الهوية، الشهادات، الخبرة، حسن السيرة، الترخيص.</div>
+    </div>
+    <div class="step">
+      <div class="step-title">2.✅إرسال الطلب وانتظار التحقق</div>
+      <div class="step-desc">متابعة مراحل التحقق: التحقق من الوثائق ثم الكروس تشيك النهائي.</div>
+    </div>
+    <div class="step">
+      <div class="step-title">3. اجتياز امتحان برومترك</div>
+      <div class="step-desc">التسجيل للامتحان الطبي، المذاكرة، التقديم، واستلام النتيجة.</div>
+    </div>
+    <div class="step">
+      <div class="step-title">4. استخراج تصريح مزاولة المهنة من DHA</div>
+      <div class="step-desc">تقديم النتيجة + تقرير داتا فلو للحصول على الرخصة الرسمية.</div>
+    </div>
+    <div class="step">
+      <div class="step-title">5. البحث عن فرصة عمل</div>
+      <div class="step-desc">التقديم للمراكز الطبية والعيادات داخل دبي للتعاقد.</div>
+    </div>
+    <div class="step">
+      <div class="step-title">6. توقيع عقد وسفر العائلة</div>
+      <div class="step-desc">الحصول على تأشيرة عمل ثم دعوة العائلة للسفر والبدء بالحياة هناك.</div>
+    </div>
+  </section>
+
   <main>
     <div class="status-card">
       <button class="tooltip-button">؟</button>
@@ -134,7 +207,7 @@
     </div>
   </main>
   <footer>
-    تم الإنشاء بواسطة عمر 
+    تم الإنشاء بواسطة عمر ❤️
   </footer>
 
   <script>
