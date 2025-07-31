@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تتبع حالة داتا فلو</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom left, #fdfcfa, #f5f5f5);
+      color: #333;
+    }
+    header {
+      background: #4a8d8c;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 800;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    main {
+      padding: 1.5rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    .status-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: relative;
+      transition: transform 0.3s;
+    }
+    .status-card:hover {
+      transform: translateY(-5px);
+    }
+    .title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: #4a4a4a;
+    }
+    .value {
+      font-size: 1.1rem;
+      color: #555;
+    }
+    .tooltip-button {
+      background: #eee;
+      border: none;
+      font-size: 1rem;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 24px;
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+    }
+    .tooltip {
+      position: absolute;
+      bottom: 0.5rem;
+      right: 1rem;
+      background: #f8f8f8;
+      border: 1px solid #ccc;
+      padding: 0.5rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      max-width: 250px;
+      display: none;
+      z-index: 10;
+    }
+    .status-card:hover .tooltip {
+      display: block;
+    }
+    .updated {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #aaa;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    🗂️ حالة معاملة داتا فلو
+  </header>
+  <main>
+    <div class="status-card">
+      <button class="tooltip-button">؟</button>
+      <div class="tooltip">تأكيد الشهادة الطبية من الجهة الرسمية.</div>
+      <div class="title">الترخيص الطبي</div>
+      <div class="value">✅ تم التحقق</div>
+    </div>
+    <div class="status-card">
+      <button class="tooltip-button">؟</button>
+      <div class="tooltip">التحقق من الخبرة المهنية من جهة العمل السابقة.</div>
+      <div class="title">شهادة الخبرة</div>
+      <div class="value">⏳ قيد التحقق</div>
+    </div>
+    <div class="status-card">
+      <button class="tooltip-button">؟</button>
+      <div class="tooltip">شهادة حسن سيرة وسلوك من الجهة الصحية.</div>
+      <div class="title">شهادة حسن السيرة</div>
+      <div class="value">✅ تم التحقق</div>
+    </div>
+    <div class="status-card">
+      <button class="tooltip-button">؟</button>
+      <div class="tooltip">التحقق من مطابقة الهوية الرسمية (جواز أو بطاقة).</div>
+      <div class="title">الهوية</div>
+      <div class="value">✅ تم التحقق</div>
+    </div>
+    <div class="status-card">
+      <button class="tooltip-button">؟</button>
+      <div class="tooltip">تأكيد ومطابقة كافة الوثائق والمعلومات مع الجهات المعنية.</div>
+      <div class="title">الكروس تشيك (المراجعة الشاملة)</div>
+      <div class="value">⏳ قيد التحقق</div>
+    </div>
+
+    <div class="updated" id="lastUpdated">
+      آخر تحديث: جاري التحميل...
+    </div>
+  </main>
+  <footer>
+    تم الإنشاء بواسطة عمر ❤️ لعائلتي العزيزة
+  </footer>
+
+  <script>
+    const now = new Date();
+    const days = ['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+    const months = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+    const day = days[now.getDay()];
+    const date = now.getDate();
+    const month = months[now.getMonth()];
+    const year = now.getFullYear();
+    const hour = now.getHours().toString().padStart(2, '0');
+    const minute = now.getMinutes().toString().padStart(2, '0');
+
+    const timestamp = `آخر تحديث: ${day} ${date} ${month} ${year} - ${hour}:${minute}`;
+    document.getElementById("lastUpdated").innerText = timestamp;
+  </script>
+</body>
+</html>
